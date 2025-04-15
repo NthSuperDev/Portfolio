@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NthSuperDev | Portfolio</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background-color: #ffffff;
+      color: #1a1a1a;
+      overflow-x: hidden;
+    }
+    .hero {
+      background: linear-gradient(135deg, #e0f7ff, #ffffff);
+      position: relative;
+    }
+    .hero::before {
+      content: "";
+      position: absolute;
+      top: -50px;
+      left: -50px;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle at center, #cceeff 0%, transparent 60%);
+      animation: rotate 20s linear infinite;
+      z-index: 0;
+    }
+    @keyframes rotate {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+    .hero-content {
+      position: relative;
+      z-index: 1;
+    }
+    .btn-primary {
+      background-color: #007aff;
+      color: white;
+      padding: 0.75rem 1.5rem;
+      border-radius: 9999px;
+      transition: all 0.4s ease;
+      box-shadow: 0 5px 15px rgba(0,122,255,0.3);
+    }
+    .btn-primary:hover {
+      background-color: #005fcc;
+      transform: translateY(-3px) scale(1.05);
+      box-shadow: 0 10px 25px rgba(0,122,255,0.5);
+    }
+    .glass-card {
+      background: rgba(255, 255, 255, 0.6);
+      backdrop-filter: blur(20px);
+      border-radius: 1.5rem;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.05);
+      transition: all 0.4s ease;
+      transform: perspective(800px) rotateX(0deg);
+    }
+    .glass-card:hover {
+      transform: translateY(-10px) rotateX(3deg);
+      box-shadow: 0 30px 60px rgba(0, 0, 0, 0.1);
+    }
+    .glass-card:hover h2 {
+      color: #007aff;
+      transform: scale(1.05);
+    }
+    h1, h2 {
+      transition: color 0.3s ease, transform 0.3s ease;
+      cursor: pointer;
+    }
+    h1:hover, h2:hover {
+      color: #007aff;
+      transform: scale(1.02);
+    }
+    .neon-border {
+      border: 2px solid #00cfff;
+      box-shadow: 0 0 10px #00cfff, 0 0 20px #00cfff inset;
+      animation: flicker 3s infinite;
+    }
+    @keyframes flicker {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.6; }
+    }
+    .floating {
+      animation: float 6s ease-in-out infinite;
+    }
+    @keyframes float {
+      0% { transform: translateY(0); }
+      50% { transform: translateY(-15px); }
+      100% { transform: translateY(0); }
+    }
+  </style>
+</head>
+<body class="text-gray-800">
+  <!-- Hero Section -->
+  <section class="hero text-center py-32 px-6">
+    <div class="hero-content">
+      <h1 class="text-6xl font-bold mb-6 floating">🚀 Welcome to the Future</h1>
+      <p class="text-xl mb-10 max-w-xl mx-auto"></p>
+      <a href="#explore" class="btn-primary">Show Me More</a>
+    </div>
+  </section>
+
+  <!-- Feature Cards -->
+  <section id="explore" class="py-24 px-6 max-w-6xl mx-auto grid md:grid-cols-3 gap-12">
+    <div class="glass-card p-10 text-center neon-border">
+      <h2 class="text-3xl font-semibold mb-4">💡 Innovation</h2>
+      <p>I strive to create practical and sustainable solutions that can make everyday life easier and better.</p>
+    </div>
+    <div class="glass-card p-10 text-center neon-border">
+      <h2 class="text-3xl font-semibold mb-4">🛰️ Vision</h2>
+      <p>I approach the future with an open and curious mindset, always looking for new ways to think and improve the world.</p>
+    </div>
+    <div class="glass-card p-10 text-center neon-border">
+      <h2 class="text-3xl font-semibold mb-4">🧠 Growth</h2>
+      <p>I am determined to continuously grow, both as a programmer and as a person, in order to contribute in the best way possible.</p>
+    </div>
+  </section>
+
+  <!-- Quote Section -->
+  <section class="text-center py-24 bg-gray-100 px-6">
+    <blockquote class="text-3xl italic max-w-3xl mx-auto floating">"Think it. Code it. Own it."</blockquote>
+    <p class="mt-6 text-sm text-gray-500">– NthSuperDev, Age 15</p>
+  </section>
+
+  <!-- Footer -->
+  <footer class="text-center py-10 text-sm text-gray-400">
+    &copy; 2025 NthSuperDev. Designed with precision and passion.
+  </footer>
+</body>
+</html>
